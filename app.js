@@ -45,7 +45,6 @@ app.put('/users/:id', (req, res, next) => {
     let user = req.body;
     user.birthday = new Date(user.birthday);
     delete user.id;
-
     const index = users.findIndex(user => user.id === parseInt(req.params.id));
     res.json(users[index]);
 });
